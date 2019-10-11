@@ -99,35 +99,50 @@ class SortingRobot:
         Sort the robot's list.
         """
 
-        # while light is on
-            # turn light off
+        # while light is off
+        while self.light_is_on() == False:
+            # turn light on
+            self.set_light_on()
 
             # while can move right
+            while self.can_move_right():
                 # pick up the item
-                
+                self.swap_item()
 
-                #move right
+                # move right
+                self.move_right()
 
                 # if current item is greater than _item
+                if self.compare_item() == 1:
                     # swap item
-
+                    self.swap_item()
 
                     # move left
+                    self.move_left()
 
                     # swap items
+                    self.swap_item()
 
-                    # turn light on
+                    # turn light off
+                    self.set_light_off()
 
                 # else
+                else:
                     # move left
-                    
+                    self.move_left()
+
                     # swap items
+                    self.swap_item()
+
+                    # move right
+                    self.move_right()
+
+                # self.move_right()
 
             # while can move left
+            while self.light_is_on() == False and self.can_move_left():
                 # move left
-
-                
-                
+                self.move_left()
 
 
 if __name__ == "__main__":
