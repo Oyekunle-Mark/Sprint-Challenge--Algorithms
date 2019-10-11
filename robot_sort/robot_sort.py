@@ -94,6 +94,20 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+    def can_move_left_x(self):
+        """
+        Returns True if the robot can move left or False if it's
+        at the start of the list.
+        """
+        return self._position > 1
+
+    def can_move_right_x(self):
+        """
+        Returns True if the robot can move right or False if it's
+        at the end of the list.
+        """
+        return self._position < len(self._list) - 2
+
     def sort(self):
         """Uses the bubble sort algorithm to implement a robot sorting arm
 
@@ -106,7 +120,7 @@ class SortingRobot:
             self.set_light_on()
 
             # while can move right
-            while self.can_move_right():
+            while self.can_move_right_x():
                 # pick up the item
                 self.swap_item()
                 # move right
@@ -134,9 +148,11 @@ class SortingRobot:
                     # move right
                     self.move_right()
 
+            self.move_right()
+
             # move all the way back while light is off
             # Improve performance by sorting backwards in the process
-            while self.light_is_on() == False and self.can_move_left():
+            while self.light_is_on() == False and self.can_move_left_x():
                 # pick up item
                 self.swap_item()
                 # move left
@@ -161,6 +177,8 @@ class SortingRobot:
                     self.swap_item()
                     # move left
                     self.move_left()
+
+            self.move_left()
 
 
 if __name__ == "__main__":
