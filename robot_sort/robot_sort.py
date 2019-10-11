@@ -99,30 +99,32 @@ class SortingRobot:
         Sort the robot's list.
         """
 
-        # while light is on is false
-            # pick up the first item
+        # while light is on
+            # turn light off
 
-            # move right
+            # while can move right
+                # pick up the item
+                
 
-            # while move_right is true
-                # compare item if smaller swap
+                #move right
+
+                # if current item is greater than _item
+                    # swap item
 
 
-                # if move_right is false
+                    # move left
+
+                    # swap items
+
+                    # turn light on
+
+                # else
+                    # move left
                     
-                    # while move_left is true
-                        
-                        # move left
-                        # compare item if smaller swap
+                    # swap items
 
-                        # if compare returns None swap
-                        # break
-
-                # move right
-                # break
-
-            # if can move right is false
-                # turn light on
+            # while can move left
+                # move left
 
                 
                 
