@@ -135,9 +135,32 @@ class SortingRobot:
                     self.move_right()
 
             # move all the way back while light is off
+            # Improve performance by sorting backwards in the process
             while self.light_is_on() == False and self.can_move_left():
+                # pick up item
+                self.swap_item()
                 # move left
                 self.move_left()
+
+                # if current item is less than _item, swap
+                if self.compare_item() == -1:
+                    # swap item
+                    self.swap_item()
+                    # move right
+                    self.move_right()
+                    # swap items
+                    self.swap_item()
+                    # move left again
+                    self.move_left()
+
+                # else, return the item and move on
+                else:
+                    # move right
+                    self.move_right()
+                    # swap items
+                    self.swap_item()
+                    # move left
+                    self.move_left()
 
 
 if __name__ == "__main__":
