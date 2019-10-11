@@ -120,6 +120,8 @@ class SortingRobot:
                     self.move_left()
                     # swap items
                     self.swap_item()
+                    # move right again
+                    self.move_right()
                     # turn light off so the sorting goes on
                     self.set_light_off()
 
