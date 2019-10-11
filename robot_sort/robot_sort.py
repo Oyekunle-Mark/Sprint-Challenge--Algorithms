@@ -95,10 +95,11 @@ class SortingRobot:
         return self._light == "ON"
 
     def sort(self):
-        """
-        Sort the robot's list.
-        """
+        """Uses the bubble sort algorithm to implement a robot sorting arm
 
+        Returns:
+            list -- the sorted list
+        """
         # while light is off
         while self.light_is_on() == False:
             # turn light on
