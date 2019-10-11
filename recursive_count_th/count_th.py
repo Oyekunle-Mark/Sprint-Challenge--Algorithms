@@ -1,11 +1,12 @@
-'''
-Your function should take in a single parameter (a string `word`)
-Your function should return a count of how many occurrences of ***"th"*** occur within `word`. Case matters.
-Your function must utilize recursion. It cannot contain any loops.
-'''
-
-
 def count_th(word):
+    """Counts the number of 'th' in word(input string). This program is case sensitive
+
+    Arguments:
+        word {str} -- the string to be counted
+
+    Returns:
+        int -- the number of 'th's found in word
+    """
     # if word is an empty string return 0
     if len(word) == 0:
         return 0
